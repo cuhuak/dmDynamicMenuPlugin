@@ -1,0 +1,62 @@
+div.dm_widget_navigation_dynamic_menu_form .items_list {
+  min-height: 100px;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+div.dm_widget_navigation_dynamic_menu_form .dm_help.no_margin {
+  margin-left: 0;
+}
+
+div.dm_widget_navigation_dynamic_menu_form li.item_element {
+  padding: 5px;
+  border-bottom: 1px solid #D3D3D3;
+}
+
+div.dm_widget_navigation_dynamic_menu_form li.item_element:hover {
+  background: #F0F4FC;
+}
+
+div.dm_widget_navigation_dynamic_menu_form a.item_text {
+  font-weight: bold;
+  cursor: pointer;
+  display: block;
+  height: 16px;
+}
+
+div.dm_widget_navigation_dynamic_menu_form ul.item_form {
+  display: none;
+}
+
+div.dm_widget_navigation_dynamic_menu_form ul.item_form li {
+  margin: 2px 0;
+}
+
+div.dm_widget_navigation_dynamic_menu_form ul.item_form li label {
+  float: left;
+  width: 25%;
+  margin-top: 1px;
+}
+
+div.dm_widget_navigation_dynamic_menu_form ul.item_form li input,
+div.dm_widget_navigation_dynamic_menu_form ul.item_form li select {
+  border: 1px solid #FFF;
+  background: none;
+}
+
+div.dm_widget_navigation_dynamic_menu_form ul.item_form li input {
+  width: 70%
+}
+
+div.dm_widget_navigation_dynamic_menu_form ul.item_form li input:hover,
+div.dm_widget_navigation_dynamic_menu_form ul.item_form li input:active,
+div.dm_widget_navigation_dynamic_menu_form ul.item_form li select:hover,
+div.dm_widget_navigation_dynamic_menu_form ul.item_form li select:active {
+  background: #FFF;
+}
+
+div.dm_widget_navigation_dynamic_menu_form a.external_link {
+  color: #046BCA;
+  text-decoration: none;
+  cursor: pointer;
+}

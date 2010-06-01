@@ -1,0 +1,7 @@
+js:
+  dmDynamicMenuPlugin: 
+    widgetForm:       widgetForm/dmWidgetNavigationDynamicMenuForm
+
+css:
+  dmDynamicMenuPlugin:
+    widgetForm:       widgetForm/dmWidgetNavigationDynamicMenuForm
