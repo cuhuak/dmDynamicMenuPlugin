@@ -22,7 +22,13 @@ class dmWidgetNavigationDynamicMenuView extends dmWidgetNavigationMenuView
       ->label($item['text'])
       ->secure(!empty($item['secure']))
       ->liClass($vars['liClass']);
-      
+
+      // adding a css class to mark that the item has children (root)
+      if ($menuItem->getLink()->getPage()->getNode()->hasChildren()) {
+        $li_class  = $menuItem->getOption('li_class');
+        $menuItem->liClass($li_class . ' has-children');
+      }
+
       $depth = dmArray::get($item, 'depth', 0);
       if ($depth!=0)
       {
@@ -52,7 +58,14 @@ class dmWidgetNavigationDynamicMenuView extends dmWidgetNavigationMenuView
           
           $menuItem->addRecursiveChildren(1);
           $depth--;
-          
+
+          // adding a css class to mark that the item has children (children)
+          foreach ($menuItem->getChildren() as $menuItemSub) {
+              if ($menuItemSub->getLink()->getPage()->getNode()->hasChildren()) {
+                $li_class  = $menuItemSub->getOption('li_class');
+                $menuItemSub->liClass($li_class . ' has-children');
+              }
+          }
 
           // for each ancestor addRecursiveChildren 
           for(;$i<count($ancestors) && $depth!=0;$i++)
@@ -63,7 +76,7 @@ class dmWidgetNavigationDynamicMenuView extends dmWidgetNavigationMenuView
             $ul_class  = $menuItem->getOption('li_class');
             $menuItem->liClass($ul_class . ' dm_in_path');
           }
-            
+
           if($menuItem->hasChild($currentPage->getName()) && $depth!=0)
           {
             $menuItem->getChild($currentPage->getName())->addRecursiveChildren(1);
